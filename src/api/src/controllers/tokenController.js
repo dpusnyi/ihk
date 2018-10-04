@@ -12,6 +12,7 @@ const { TextDecoder, TextEncoder } = require("text-encoding");
 class tokenController {
 
   async createLog(req) {
+    console.log(req.body)
     let log = req.body
     try {
       let client = await mongoClient.connect(url);
