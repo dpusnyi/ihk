@@ -13,7 +13,7 @@ class tokenController {
 
   async createLog(req) {
     let log = req.body
-    if (!search.hash && search.hash.length == 0) return "Error you can't write a record without a hash"
+    if (!log.hash && log.hash.length == 0) return "Error you can't write a record without a hash"
     else
       try {
         let client = await mongoClient.connect(url);
