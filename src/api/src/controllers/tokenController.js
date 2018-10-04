@@ -13,21 +13,24 @@ class tokenController {
 
   async createLog(req) {
     let log = req.body
-    try {
-      let client = await mongoClient.connect(url);
-      let db = client.db("logsdb");
-      let collection = db.collection("logs");
-      let result = await collection.insertOne(log);
-      client.close();
-      return result;
-    } catch (err) {
-      console.log(err)
-    }
+    if (!search.hash && search.hash.length == 0) return "Error you can't write a record without a hash"
+    else
+      try {
+        let client = await mongoClient.connect(url);
+        let db = client.db("logsdb");
+        let collection = db.collection("logs");
+        let result = await collection.insertOne(log);
+        client.close();
+        return result;
+      } catch (err) {
+        console.log(err)
+      }
   }
 
   async retrieveLog(req) {
     let search = req.body
-    if (search.hash)
+    if (!search.hash && search.hash.length == 0) return "Error you can't retrieve a record without a hash"
+    else 
       try {
         let client = await mongoClient.connect(url);
         let db = client.db("logsdb");
