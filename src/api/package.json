@@ -35,18 +35,18 @@
     "babel-preset-env": "^1.6.1",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
+    "eosjs": "^20.0.0-beta1",
     "express": "^4.16.2",
     "generate-password": "^1.4.0",
     "jsonwebtoken": "^8.2.0",
     "lodash": "^4.17.5",
     "moment": "^2.21.0",
+    "mongodb": "^3.0.0",
     "mongoose": "^5.0.12",
     "morgan": "^1.9.0",
     "pug": "^2.0.0-beta11",
     "rimraf": "^2.6.2",
-    "uuid": "^3.2.1",
-    "mongodb": "^3.0.0",
-    "eosjs": "^16.0.8"
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
