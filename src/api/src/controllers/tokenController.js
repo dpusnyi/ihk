@@ -35,7 +35,9 @@ class tokenController {
         let client = await mongoClient.connect(url);
         let db = client.db("logsdb");
         let collection = db.collection("logs");
+        console.log(search.hash)
         let result = await collection.find({"hash": search.hash}).toArray();
+        console.log(result)
         client.close();
         result.forEach( (item, i, arr) => {
           delete item._id
