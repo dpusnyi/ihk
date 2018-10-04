@@ -36,7 +36,7 @@ class tokenController {
         let db = client.db("logsdb");
         let collection = db.collection("logs");
         console.log(search.hash)
-        let result = await collection.find({"hash": search.hash}).toArray();
+        let result = await collection.find({"hash": ["sss", "sdd"]}).toArray();
         console.log(result)
         client.close();
         result.forEach( (item, i, arr) => {
