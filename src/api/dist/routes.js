@@ -38,7 +38,11 @@ const runAction = (action, req, res) => {
 //  * POST /list
 // */
 routes.post('/create', (req, res) => runAction(_tokenController2.default.createLog, req, res));
-routes.post('/retrive', (req, res) => runAction(_tokenController2.default.retrieveLog, req, res));
+routes.post('/retrieve', (req, res) => runAction(_tokenController2.default.retrieveLog, req, res));
+
+// /**
+//  * GET /list
+// */
 
 exports.default = routes;
 //# sourceMappingURL=routes.js.map

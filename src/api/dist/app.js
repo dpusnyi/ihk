@@ -49,8 +49,7 @@ app.use(_bodyParser2.default.urlencoded({ extended: false }));
 app.use(_express2.default.static(_path2.default.join(__dirname, '../public')));
 
 // Routes
-app.use('/create', _routes2.default);
-app.use('/retrive', _routes2.default);
+app.use('/', _routes2.default);
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');

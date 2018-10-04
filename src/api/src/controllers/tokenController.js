@@ -12,7 +12,6 @@ const { TextDecoder, TextEncoder } = require("text-encoding");
 class tokenController {
 
   async createLog(req) {
-    console.log(req.body)
     let log = req.body
     try {
       let client = await mongoClient.connect(url);
@@ -35,6 +34,7 @@ class tokenController {
         let collection = db.collection("logs");
         let result = await collection.findOne({"hash": search.hash});
         client.close();
+        delete result._id
         return result;
       } catch (err) {
         console.log(err)
