@@ -57,7 +57,7 @@ class tokenController {
         let result = await collection.find({"company_id": {'$in': search.id } }).toArray();
         client.close();
         result.forEach( (item, i, arr) => {
-          delete item._id
+          delete item.id
         })
         return result;
       } catch (err) {
