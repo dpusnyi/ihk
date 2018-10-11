@@ -46,6 +46,25 @@ class tokenController {
       }
   }
 
+  async retrieveCompany(req) {
+    let search = req.body
+    if (!search.company && search.hash.length == 0) return "Error you can't retrieve a record without company ID"
+    else 
+      try {
+        let client = await mongoClient.connect(url);
+        let db = client.db("logsdb");
+        let collection = db.collection("logs");
+        let result = await collection.find({"companyId": {'$in': search.id } }).toArray();
+        client.close();
+        result.forEach( (item, i, arr) => {
+          delete item._id
+        })
+        return result;
+      } catch (err) {
+        console.log(err)
+      }
+  }
+
 }
 
 export default new tokenController();
