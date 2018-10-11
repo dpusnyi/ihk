@@ -29,7 +29,7 @@ const runAction = (action, req, res) =>  {
 // */
 routes.post('/create', (req, res) => runAction(tokenController.createLog, req, res));
 routes.post('/retrieve', (req, res) => runAction(tokenController.retrieveLog, req, res));
-routes.post('/retrieveCompany', (req, res) => runAction(tokenController.retrieveCompany, req, res));
+routes.post('/searchByCompany', (req, res) => runAction(tokenController.retrieveCompany, req, res));
 
 // /**
 //  * GET /list
