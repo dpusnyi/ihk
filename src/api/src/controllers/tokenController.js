@@ -54,7 +54,7 @@ class tokenController {
         let client = await mongoClient.connect(url);
         let db = client.db("logsdb");
         let collection = db.collection("logs");
-        let result = await collection.find({"companyId": {'$in': search.id } }).toArray();
+        let result = await collection.find({"company_id": {'$in': search.id } }).toArray();
         client.close();
         result.forEach( (item, i, arr) => {
           delete item._id
