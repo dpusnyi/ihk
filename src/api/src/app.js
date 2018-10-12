@@ -7,7 +7,14 @@ const app = express();
 app.disable('x-powered-by');
 
 app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Methods', 'POST');
+  var allowedOrigins = ['*'];
+  var origin = req.headers.origin;
+  if(allowedOrigins.indexOf(origin) > -1){
+       res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS, PUT, POST, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Credentials', true);
   return next();
 });
 
