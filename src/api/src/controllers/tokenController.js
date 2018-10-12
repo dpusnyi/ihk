@@ -23,7 +23,6 @@ class tokenController {
         client.close();
         return result;
       } catch (err) {
-        console.log(err)
       }
   }
 
@@ -42,7 +41,6 @@ class tokenController {
         })
         return result;
       } catch (err) {
-        console.log(err)
       }
   }
 
@@ -62,7 +60,6 @@ class tokenController {
         })
         return result;
       } catch (err) {
-        console.log(err)
       }
   }
 
