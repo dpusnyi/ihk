@@ -38,6 +38,7 @@ class tokenController {
         client.close();
         result.forEach( (item, i, arr) => {
           delete item._id
+          delete item.id
         })
         return result;
       } catch (err) {
